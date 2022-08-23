@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "sink"
+version = "0.1.0"
+description = ""
+authors = ["Fung <fungnoth@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+Flask = "*"
+spleeter = "^2.3.1"
+python-dotenv = "^0.20.0"
+pytube = "^12.1.0"
+certifi = "^2022.6.15"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
