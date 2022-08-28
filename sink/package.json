@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  },
+  "scripts": {
+    "tail": "npx tailwindcss -i ./src/style.css -o ./public/style.css --watch",
+    "web": "poetry run flask run"
+  }
+}

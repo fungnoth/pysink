@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from flask import Flask, send_file
+from flask import Flask, jsonify, send_from_directory
 from spleeter.separator import Separator
 from pytube import YouTube
 from os.path import exists
@@ -9,28 +9,27 @@ load_dotenv()
 
 app = Flask(__name__)
 path = app.root_path
+outfile_path = "public/"
 separator = Separator('spleeter:2stems')
 
-def run():
-    output_path = path + '/tmp/output'
-    separator.separate_to_file(path + '/tmp/45-60.mp3', output_path)
+@app.route('/<path:path>')
+def send_static(path):
+    return send_from_directory(outfile_path, path)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
-@app.route('/<vid>')
+@app.route('/v/<vid>')
 def youtube(vid):
-    folder = "files/"
     filename = vid+".mp4"
-    if not exists(folder+filename):
+    if not exists(outfile_path+filename):
         yt = YouTube('http://youtube.com/watch?v='+vid)
-        yt.streams.get_audio_only().download(folder, filename)
+        yt.streams.get_audio_only().download(outfile_path, filename)
 
-    if not exists(folder + vid + "/" + "accompaniment.wav"):
-        separator.separate_to_file(folder + filename, folder)
-
-    return send_file(folder + vid + "/" + "accompaniment.wav")
+    if not exists(outfile_path + vid + "/" + "accompaniment.wav"):
+        separator.separate_to_file(outfile_path + filename, outfile_path)
+    
+    return jsonify({
+        "vocals": "/" + vid + "/" + "vocals.wav",
+        "bg": "/" + vid + "/" + "accompaniment.wav"
+    })
 
 
 app.run()
