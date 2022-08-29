@@ -17,89 +17,111 @@
     }
 </style>
 <body class="h-full">
-    <div class="bg-img bg-cover h-full fixed w-full blur-[100px] brightness-[50%] saturate-150 scale-125 z-[-1]"></div>
-    <div class="fixed right-0 bottom-0 text-gray-900 py-1 px-4 text-sm">
-        python + flask + spleeter + pytube
-    </div>
     
+    <div class="flex w-[calc(200vw-50px)]">
+        <div class="w-[calc(100vw-50px)] h-full flex justify-between items-center relative">
+            <div class="absolute right-0 bottom-0 text-gray-900 py-1 px-4 text-sm">
+                python + flask + spleeter + pytube
+            </div>
+            <form class="flex flex-1 text-center relative">
+                <div 
+                    class="input-wrap relative w-full max-w-sm mx-auto 
+                            after:absolute after:w-[7rem] after:bg-black/30 after:h-[1px] after:bottom-0 after:left-1/2 after:-translate-x-1/2
+                            after:tansition-300 [&.active]:after:bg-teal-300 [&.active]:after:h-[2px] after:transition-[width,height,background] 
+                            hover:after:bg-teal-300 hover:after:h-[2px] [&.active]:after:w-full [&.has-value]:after:w-full 
+                            [&.active_h2]:-left-4  [&.active_h2]:translate-x-0 [&.active_h2]:scale-[60%]
+                            [&.has-value_h2]:-left-4 [&.has-value_h2]:translate-x-0 [&.has-value_h2]:scale-[60%]
+                            [&.active_h2]:pointer-events-auto [&.has-value_h2]:pointer-events-auto" 
+                            data-input-wrap="[data-search-field]"
+                >
+                    <input 
+                        type="search" 
+                        class="p-2 pl-[4.25rem] pr-2 text-2xl focus-visible:outline-none relative
+                               w-full duration-300 transition-[border,width] text-center " 
+                        data-search-field                         
+                    />
+                    <h2 class="w-auto text-2xl tracking-widest absolute 
+                                top-0 left-1/2 -translate-x-1/2 p-2 pr-4  transition-[transform,left,top] duration-[.2s]  pointer-events-none">
+                        <button type="submit" class="cursor-pointer">
+                            <span class="material-symbols-outlined">history</span>
+                            回帶
+                        </button>
+                        
+                    </h2>
+                </div>
+                <div>
     
-    <div class="min-h-full flex justify-between items-center">
-        <form class="flex flex-1 text-center">
-            <div 
-                class="input-wrap relative w-full max-w-sm mx-auto 
-                        after:absolute after:w-[7rem] after:bg-black/30 after:h-[1px] after:bottom-0 after:left-1/2 after:-translate-x-1/2
-                        after:tansition-300 [&.active]:after:bg-teal-300 [&.active]:after:h-[2px] after:transition-[width,height,background] 
-                        hover:after:w-full [&.active]:after:w-full [&.has-value]:after:w-full 
-                        [&.active_h2]:-left-4  [&.active_h2]:translate-x-0 [&.active_h2]:scale-[70%]
-                        [&.has-value_h2]:-left-4 [&.has-value_h2]:translate-x-0 [&.has-value_h2]:scale-[70%]" 
-                        data-input-wrap="[data-history-search]"
+                </div>
+            </form>
+            
+            <h1
+                class="text-9xl px-6 py-10 font-thin text text-vertical text-center tracking-wider relative whitespace-nowrap
+                        before:absolute before:w-[2px] before:bg-black before:h-[3em] before:top-0 before:left-0
+                        after:absolute after:w-[2px] after:bg-black after:h-[3em] after:bottom-0 after:right-0"
             >
-                <input 
-                    type="search" 
-                    class="p-2 pl-20 pr-2 text-2xl focus-visible:outline-none relative
-                        w-full duration-300 transition-[border,width] text-center "
-                    data-history-search
-                />
-                <h2 class="w-auto text-2xl tracking-widest absolute 
-                            top-0 left-1/2 -translate-x-1/2 p-2 pr-4 pointer-events-none transition-[transform,left,top] duration-[.2s]">
-                    <span class="material-symbols-outlined  top">history</span>
-                    回帶
-                </h2>
+                今期流行
+            </h1>
+            <div class="flex-1 h-screen overflow-auto px-8">
+                <div class="flex flex-1 h-[50vh] text-center relative">
+                    <form class="w-full absolute bottom-0 translate-y-1/2">
+                        <div 
+                            class="input-wrap relative w-full max-w-sm mx-auto 
+                                    after:absolute after:w-[7rem] after:bg-black/30 after:h-[1px] after:bottom-0 after:left-1/2 after:-translate-x-1/2
+                                    after:tansition-300 [&.active]:after:bg-teal-300 [&.active]:after:h-[2px] after:transition-[width,height,background] 
+                                    hover:after:bg-teal-300 hover:after:h-[2px] [&.active]:after:w-full [&.has-value]:after:w-full 
+                                    [&.active_h2]:-left-4  [&.active_h2]:translate-x-0 [&.active_h2]:scale-[60%]
+                                    [&.has-value_h2]:-left-4 [&.has-value_h2]:translate-x-0 [&.has-value_h2]:scale-[60%]
+                                    [&.active_h2]:pointer-events-auto [&.has-value_h2]:pointer-events-auto" 
+                                    data-input-wrap="[data-search-field]"
+                        >
+                            <input 
+                                type="search" 
+                                class="p-2 pl-[4.25rem] pr-2 text-2xl focus-visible:outline-none relative
+                                       w-full duration-300 transition-[border,width] text-center " 
+                                data-search-field                         
+                            />
+                            <h2 class="w-auto text-2xl tracking-widest absolute 
+                                        top-0 left-1/2 -translate-x-1/2 p-2 pr-4  transition-[transform,left,top] duration-[.2s]  pointer-events-none">
+                                <button type="submit" class="cursor-pointer">
+                                    <span class="material-symbols-outlined">search</span>
+                                    搵片
+                                </button>
+                                
+                            </h2>
+                        </div>
+                    </form>
+                </div>
+                <div class="pt-16">
+                    <template id="search-result-item">
+                        <li data-vid="" class="block px-8 mb-10">
+                            <img class="thumbnail object-cover aspect-[3/2]"></img>
+                            <h3 class="text-center title text-2xl font-light mt-4"></h3>
+                        </li>
+                    </template>
+                    <ul id="search-result"></ul>
+                </div>
+                
             </div>
-        </form>
-        
-        <h1
-            class="text-9xl px-6 py-10 font-thin text text-vertical text-center tracking-wider relative whitespace-nowrap
-                    before:absolute before:w-[2px] before:bg-black before:h-[3em] before:top-0 before:left-0
-                    after:absolute after:w-[2px] after:bg-black after:h-[3em] after:bottom-0 after:right-0"
-        >
-            今期流行
-        </h1>
-        <form class="flex flex-1 text-center relative">
-            <div 
-                class="input-wrap relative w-full max-w-sm mx-auto 
-                        after:absolute after:w-[7rem] after:bg-black/30 after:h-[1px] after:bottom-0 after:left-1/2 after:-translate-x-1/2
-                        after:tansition-300 [&.active]:after:bg-teal-300 [&.active]:after:h-[2px] after:transition-[width,height,background] 
-                        hover:after:w-full [&.active]:after:w-full [&.has-value]:after:w-full 
-                        [&.active_h2]:-left-4  [&.active_h2]:translate-x-0 [&.active_h2]:scale-[70%]
-                        [&.has-value_h2]:-left-4 [&.has-value_h2]:translate-x-0 [&.has-value_h2]:scale-[70%]" 
-                        data-input-wrap="[data-search-field]"
-            >
-                <input 
-                    type="search" 
-                    class="p-2 pl-20 pr-2 text-2xl focus-visible:outline-none relative
-                           w-full duration-300 transition-[border,width] text-center " 
-                    data-search-field                         
-                />
-                <h2 class="w-auto text-2xl tracking-widest absolute 
-                            top-0 left-1/2 -translate-x-1/2 p-2 pr-4 pointer-events-none transition-[transform,left,top] duration-[.2s] ">
-                    <button type="submit"><span class="material-symbols-outlined">search</span></button>
-                    
-                    搵片
-                </h2>
-            </div>
-            <div>
-
-            </div>
-        </form>
-    </div>
-    <input type="hidden" id="youtube-player-api-ready"/>
-    <div class="w-full min-h-full bg-black flex flex-col justify-center relative">
-        <div id="ytplayer" class="aspect-video"></div>
-        <div class="flex justify-center p-3 gap-8 w-full text-white bg-slate-800/75 absolute bottom-0">
-            <div>
-                <label for="vocals-vol">人聲</label>
-                <input type="range" id="vocals-vol" min="1" max="100" value="0">
-                <audio id="vocals" class="hidden" data-vol-control="#vocals-vol"></audio>
-            </div>
-            <div>
-                <label for="bg-vol">伴奏</label>
-                <input type="range" id="bg-vol" min="1" max="100" value="100">
-                <audio id="bg" class="hidden" data-vol-control="#bg-vol"></audio>
-
-            </div>
-    
+            
         </div>
+        <div class="w-screen h-screen bg-black flex flex-col justify-center relative">
+            <div id="ytplayer" class="aspect-video"></div>
+            <div class="flex justify-center p-3 gap-8 w-full text-white bg-slate-800/75 absolute bottom-0">
+                <div>
+                    <label for="vocals-vol">人聲</label>
+                    <input type="range" id="vocals-vol" min="1" max="100" value="20">
+                    <audio id="vocals" class="hidden" data-vol-control="#vocals-vol"></audio>
+                </div>
+                <div>
+                    <label for="bg-vol">伴奏</label>
+                    <input type="range" id="bg-vol" min="1" max="100" value="100">
+                    <audio id="bg" class="hidden" data-vol-control="#bg-vol"></audio>
+    
+                </div>
+        
+            </div>
+        </div>
+
     </div>
 
     <script>
@@ -112,13 +134,6 @@
         // Replace the 'ytplayer' element with an <iframe> and
         // YouTube player after the API code downloads.
         var player;
-        function onYouTubePlayerAPIReady() {
-            var el = document.getElementById('youtube-player-api-ready');
-            el.value="1"
-            el.dispatchEvent(new Event('change'));
-            
-            window.player = new YT.Player('ytplayer', {height: '100%', width: '100%'});
-        }
     </script>
 
 </body>

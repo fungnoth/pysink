@@ -74,11 +74,11 @@ def search(query):
     result = []
     for item in search_session.search.results:
         result.append({
+            "vid": item.video_id,
             "author":item.author,
             "channel_id": item.channel_id,
             "thumbnail_url": item.thumbnail_url,
-            "title": item.title,
-            "vid_info": item.vid_info
+            "title": item.title
         })
 
     return jsonify({
