@@ -12,6 +12,12 @@ function onYouTubePlayerAPIReady() {
     window.player.addEventListener("onStateChange", syncPlayers)
 }
 
+function youtube_parser(url){
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+    var match = url.match(regExp);
+    return (match&&match[7].length==11)? match[7] : false;
+}
+
 function syncPlayers() {
     const curState = window.player.getPlayerState();
     const curTime = window.player.getCurrentTime();
@@ -70,6 +76,9 @@ domLoaded(() => {
     find("[data-search-field]").forEach(async (el) => {
         el.closest("form").addEventListener("submit", async (e) => {
             e.preventDefault();
+            let vid = youtube_parser(el.value);
+            if (vid) return loadVideo(vid);
+
             let searchUrl = `/q/${el.value}`;
             if (window.searchHistory[el.value]) {
                 searchUrl += "?"+ new URLSearchParams({id: window.searchHistory[el.value]}).toString();
