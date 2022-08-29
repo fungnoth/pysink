@@ -11,6 +11,7 @@ spleeter = "^2.3.1"
 python-dotenv = "^0.20.0"
 pytube = "^12.1.0"
 certifi = "^2022.6.15"
+ffmpy = "^0.3.0"
 
 [tool.poetry.dev-dependencies]
 
