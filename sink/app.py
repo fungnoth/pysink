@@ -28,6 +28,7 @@ def send_static(path):
 
 @app.route('/v/<vid>')
 def youtube(vid):
+    import os, sys
     from os.path import exists
     filename = vid+".mp4"
     if not exists(public_path + outfile_path + filename):
@@ -53,6 +54,10 @@ def youtube(vid):
         convertStart = datetime.now()
         convert_vocals.run()
         print((datetime.now() - convertStart).total_seconds(), "s")
+        os.unlink(public_path + outfile_path+ vid + "/" + "accompaniment.wav")
+        os.unlink(public_path + outfile_path+ vid + "/" + "vocals.wav")
+        os.unlink(public_path + outfile_path + filename)
+
 
     return jsonify({
         "vocals": "/" + outfile_path + vid + "/" + "vocals.webm",
